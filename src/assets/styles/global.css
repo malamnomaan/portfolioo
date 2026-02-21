@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-gold: #B8860B;
+  /* Deep Metallic Gold */
+  --secondary-gold: #D4AF37;
+  /* Champagne Gold */
+  --accent-gold: #C5A059;
+  /* Soft Champagne */
+  --bg-light: #FDFCF0;
+  /* Light Ivory/Cream */
+  --text-dark: #1A1A1A;
+  /* Deep Charcoal */
+  --text-muted: #666666;
+  --gold-glow: rgba(184, 134, 11, 0.15);
+  --noise-opacity: 0.03;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.luxury-heading {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Custom Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-gold);
+}
+
+/* Luxury Noise Texture Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: var(--noise-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3B%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Gold Shimmer Sweep */
+.gold-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(184, 134, 11, 0.1) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%);
+  transition: all 0s;
+  pointer-events: none;
+}
+
+.gold-shimmer:hover::after {
+  top: 100%;
+  left: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Modern Luxury Buttons */
+.btn-gold {
+  background-color: var(--primary-gold);
+  border: none;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px var(--gold-glow);
+}
+
+.btn-gold:hover {
+  background-color: var(--secondary-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--gold-glow);
+  color: white;
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  border: 1.5px solid var(--primary-gold);
+  color: var(--primary-gold);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--primary-gold);
+  color: white;
+}
+
+.card-luxury {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card-luxury:hover {
+  border-color: var(--primary-gold);
+  box-shadow: 0 20px 40px rgba(184, 134, 11, 0.08);
+  transform: translateY(-8px);
+}
+
+/* Custom Cursor Adjustment */
+.custom-cursor {
+  mix-blend-mode: multiply !important;
+}
+
+/* Navigation Overrides */
+.navbar-luxury {
+  background: rgba(253, 252, 240, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.1);
+}
